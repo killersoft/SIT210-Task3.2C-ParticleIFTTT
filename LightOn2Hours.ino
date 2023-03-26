@@ -24,7 +24,7 @@ void loop() {
 			LastTimeOn=millis(); //increment Last time on at end of loop.
     }
     //Next lets test if we have 2 hours worth of SUNLIGHT 
-    if (OnTime > (hour*2)){  //TEMP set TO 60 SECONDS RATHER THAN 2 HOURS FOR DEMONSTARTION
+    if (OnTime > (hour*2)){  //Can set TO 60 SECONDS RATHER THAN 2 HOURS FOR DEMONSTARTION
         Particle.publish("2Hours_Light", PRIVATE); //Send out webhook to particle.io -> IFTTT->email notification.
          
         //Now reset counters
