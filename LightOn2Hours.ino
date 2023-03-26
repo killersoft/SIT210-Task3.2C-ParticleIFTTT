@@ -21,6 +21,7 @@ void loop() {
     
     if(AnalogValue>PhotoTransisorThresholdOnOffValue){ // Light ON analog value
             OnTime = OnTime + (millis()-LastTimeOn); //count upwards seconds of Light-On-Time
+			LastTimeOn=millis(); //increment Last time on at end of loop.
     }
     //Next lets test if we have 2 hours worth of SUNLIGHT 
     if (OnTime > (hour*2)){  //TEMP set TO 60 SECONDS RATHER THAN 2 HOURS FOR DEMONSTARTION
@@ -32,7 +33,7 @@ void loop() {
         delay(hour*12); //Ideally wait 12 hours until we look again for another 2 hours worth of daylight. If we had a Real-Time-Clock attached or went out to the internet to get time, this is a good solution
     }
         
-    LastTimeOn=millis(); //increment Last time on at end of loop.
+
 }
 
 // If we get publish a request, see the responce back from particle.io
